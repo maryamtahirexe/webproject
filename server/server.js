@@ -17,7 +17,7 @@ app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://98.81.143.34:3000",
     credentials: true,
   })
 );
