@@ -7,7 +7,7 @@ import logo from "../../assets/images/logo.png";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
-const SignIn = () => {
+const Signup = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -20,28 +20,29 @@ const SignIn = () => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const handleSignIn = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://localhost:5000/owner/signin",
-        formData
-      );
+const handleSignUp = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await axios.post(
+      "http://localhost:5000/owner", 
+      formData
+    );
 
-      if (response.data.owner) {
-        setPopupMessage("Sign in successful!");
-        setNavigateToDashboard(true);
-      } else {
-        setPopupMessage("Authentication failed. Please try again.");
-      }
-    } catch (error) {
-      const errorMessage =
-        error.response && error.response.data
-          ? error.response.data.message
-          : "An unexpected error occurred. Please try again.";
-      setPopupMessage(errorMessage);
+    if (response.data) {
+      setPopupMessage("Sign up successful!");
+      setNavigateToDashboard(true);
+    } else {
+      setPopupMessage("Signup failed. Please try again.");
     }
-  };
+  } catch (error) {
+    const errorMessage =
+      error.response && error.response.data
+        ? error.response.data.message
+        : "An unexpected error occurred. Please try again.";
+    setPopupMessage(errorMessage);
+  }
+};
+
 
   const handlePopupClose = () => {
     setPopupMessage(null);
@@ -63,9 +64,9 @@ const SignIn = () => {
         <div className="w-full lg:w-1/2 flex flex-col justify-center items-center p-4 lg:p-12">
           <div className="flex items-center gap-3 mb-6">
             <img src={logo} alt="Logo" className="w-17 h-16" />
-            <h2 className="text-4xl text-highlight">Sign In</h2>
+            <h2 className="text-4xl text-highlight">Sign Up</h2>
           </div>
-          <form className="w-full max-w-sm" onSubmit={handleSignIn}>
+          <form className="w-full max-w-sm" onSubmit={handleSignUp}>
             <InputField
               label="Email"
               type="email"
@@ -85,15 +86,15 @@ const SignIn = () => {
               required
             />
             <div className="mt-6">
-              <Button text="Login" />
+              <Button text="Sign Up" />
             </div>
             <p className="mt-4 text-sm text-gray-600">
-              Don't have an account?{" "}
+              Already have an account?{" "}
               <span
                 className="text-highlight cursor-pointer hover:underline"
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/signin")}
               >
-                Sign up
+                Sign in
               </span>
             </p>
           </form>
@@ -112,4 +113,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Signup;

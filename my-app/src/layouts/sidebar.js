@@ -25,7 +25,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-64 h-full bg-primary sidebar-gradient text-highlight fixed flex flex-col justify-between">
+    <div className="w-64 h-full bg-primary sidebar-gradient text-white fixed flex flex-col justify-between">
       <div className="py-6 px-3">
         <div className="flex mb-10">
           <img src={logo} alt="Logo" className="size-16" />
@@ -34,19 +34,19 @@ const Sidebar = () => {
           </Link>
         </div>
         <ul className="ml-4 flex flex-col text-xl">
-          <li className="mb-4 hover:text-highlightHover">
+          <li className="mb-4 hover:text-newHighlight">
             <Link to="/dashboard">Property</Link>
           </li>
-          <li className="mb-4 hover:text-highlightHover">
+          <li className="mb-4 hover:text-newHighlight">
             <Link to="/dashboard/tenants">Tenants</Link>
           </li>
-          <li className="mb-4 hover:text-highlightHover">
+          <li className="mb-4 hover:text-newHighlight">
             <Link to="/dashboard/payments">Payments</Link>
           </li>
-          <li className="mb-4 hover:text-highlightHover">
+          <li className="mb-4 hover:text-newHighlight">
             <Link to="/dashboard/requests">Requests</Link>
           </li>
-          <li className="mb-4 hover:text-highlightHover">
+          <li className="mb-4 hover:text-newHighlight">
             <Link to="/dashboard/profile/update-password">Profile</Link>
           </li>
         </ul>
@@ -68,7 +68,7 @@ const Sidebar = () => {
         </svg>
         <button
           onClick={handleLogout}
-          className="text-highlight hover:text-highlightHover"
+          className="text-white hover:text-newHighlight"
         >
           Logout
         </button>

@@ -33,14 +33,14 @@ export const signInOwner = async (req, res) => {
 
 export const createOwner = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { email, password } = req.body;
 
     const existingOwner = await Owner.findOne({ email });
     if (existingOwner) {
       return res.status(400).json({ message: "Owner already exists" });
     }
 
-    const owner = new Owner({ name, email, password });
+    const owner = new Owner({ email, password });
     await owner.save();
 
     res.status(201).json({ message: "Owner created successfully", owner });

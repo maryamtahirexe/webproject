@@ -57,8 +57,8 @@ const AddPayment = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 bg-primary rounded-lg shadow-lg">
+    <div className="flex items-center justify-center min-h-screen bg-white">
+<div className="w-full max-w-md p-8 bg-white border-2 border-gray-800 rounded-lg shadow-lg">
         <h1 className="text-3xl text-highlight mb-6 text-center">
           {editPayment ? "Edit Payment" : "Add Payment"}
         </h1>

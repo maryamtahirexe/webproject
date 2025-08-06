@@ -5,7 +5,7 @@ const InputField = ({ label, type = "text", id, placeholder, value, onChange, na
         <input
           id={id}
           name={name} 
-          className="shadow bg-transparent appearance-none border border-accent rounded w-full py-2 px-3 text-white leading-tight  focus:outline-none focus:shadow-outline focus:border-highlight"
+          className="shadow bg-transparent appearance-none border-2 border-accent rounded w-full py-2 px-3 text-highlight leading-tight  focus:outline-none focus:shadow-outline focus:border-highlight"
           type={type}
           placeholder={placeholder}
           value={value}

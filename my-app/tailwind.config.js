@@ -8,12 +8,15 @@ module.exports = {
       },
       colors: {
         primary: "#191343",
-        highlight: "#efc55f",
-        highlightHover: "#f5c145",
+        highlight: "#03254c",
+        highlightHover: "#011f4b",
         accent: "#317879",
+        karayeGreen: "#2a9df4",
+        newHighlight:"#9ECAE1",
       },
     },
   },
   plugins: [],
 };
 
+//#089D6E8

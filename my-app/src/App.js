@@ -8,6 +8,7 @@ import AddRequest from "./pages/Request/AddRequest.js";
 import Tenant from "./pages/Tenant/Tenant.js";
 import AddTenant from "./pages/Tenant/AddTenant.js";
 import SignIn from "./pages/Signin/Signin.js";
+import Signup from "./pages/Signin/Signup.js";
 import Dashboard from "./pages/Dashboard/Dashboard.js";
 import AddProperty from "./pages/Dashboard/AddProperty.js";
 import UpdateEmailPage from "./pages/Profile/updateEmail.js";
@@ -17,7 +18,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SignIn />} />
+        <Route path="/" element={<Signup />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/dashboard" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="/dashboard/add-property" element={<AddProperty />} />
