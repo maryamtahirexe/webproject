@@ -17,7 +17,7 @@ app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(
   cors({
-    origin: ["http://localhost:3000","https://webproject-yb66-3uhas8jan-maryam-tahirs-projects-a66ea0b8.vercel.app"],
+    origin: ["http://localhost:3000","https://webproject-yb66.vercel.app"],
     credentials: true,
   })
 );
