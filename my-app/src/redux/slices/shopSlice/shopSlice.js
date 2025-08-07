@@ -12,7 +12,7 @@ export const createShop = createAsyncThunk(
   async (shopData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://webprojectbackend-production-ef2c.up.railway.app/shops",
+        "https://webprojectbackend-production-ef2c.up.railway.app/shops",
         shopData
       );
       return response.data;
@@ -26,7 +26,7 @@ export const getAllShops = createAsyncThunk(
   "shops/getAllShops",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get("http://webprojectbackend-production-ef2c.up.railway.app/shops");
+      const response = await axios.get("https://webprojectbackend-production-ef2c.up.railway.app/shops");
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -38,7 +38,7 @@ export const deleteShop = createAsyncThunk(
   "shops/deleteShop",
   async (shopId, { rejectWithValue }) => {
     try {
-      await axios.delete(`http://webprojectbackend-production-ef2c.up.railway.app/shops/${shopId}`);
+      await axios.delete(`https://webprojectbackend-production-ef2c.up.railway.app/shops/${shopId}`);
       return shopId;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -51,7 +51,7 @@ export const updateShop = createAsyncThunk(
   async ({ shopId, updatedData }, { rejectWithValue }) => {
     try {
       const response = await axios.put(
-        `http://webprojectbackend-production-ef2c.up.railway.app/shops/${shopId}`,
+        `https://webprojectbackend-production-ef2c.up.railway.app/shops/${shopId}`,
         updatedData
       );
       return response.data;

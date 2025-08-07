@@ -12,7 +12,7 @@ export const createApartment = createAsyncThunk(
   async (apartmentData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://webprojectbackend-production-ef2c.up.railway.app/apartments",
+        "https://webprojectbackend-production-ef2c.up.railway.app/apartments",
         apartmentData
       );
       console.log(response.data);
@@ -27,7 +27,7 @@ export const getAllApartments = createAsyncThunk(
   "apartments/getAllApartments",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get("http://webprojectbackend-production-ef2c.up.railway.app/apartments");
+      const response = await axios.get("https://webprojectbackend-production-ef2c.up.railway.app/apartments");
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -39,7 +39,7 @@ export const deleteApartment = createAsyncThunk(
   "apartments/deleteApartment",
   async (apartmentId, { rejectWithValue }) => {
     try {
-      await axios.delete(`http://webprojectbackend-production-ef2c.up.railway.app/apartments/${apartmentId}`);
+      await axios.delete(`https://webprojectbackend-production-ef2c.up.railway.app/apartments/${apartmentId}`);
       return apartmentId;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -52,7 +52,7 @@ export const updateApartment = createAsyncThunk(
   async ({ apartmentId, updatedData }, { rejectWithValue }) => {
     try {
       const response = await axios.put(
-        `http://webprojectbackend-production-ef2c.up.railway.app/apartments/${apartmentId}`,
+        `https://webprojectbackend-production-ef2c.up.railway.app/apartments/${apartmentId}`,
         updatedData
       );
       return response.data;

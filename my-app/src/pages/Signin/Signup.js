@@ -24,7 +24,7 @@ const handleSignUp = async (e) => {
   e.preventDefault();
   try {
     const response = await axios.post(
-      "http://webprojectbackend-production-ef2c.up.railway.app/owner", 
+      "https://webprojectbackend-production-ef2c.up.railway.app/owner", 
       formData
     );
 
